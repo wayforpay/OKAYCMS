@@ -45,15 +45,8 @@ class WayForPay extends Okay
         $option['merchantAuthType'] = 'simpleSignature';
         $option['merchantDomainName'] = $_SERVER['HTTP_HOST'];
         $option['merchantTransactionSecureType'] = 'AUTO';
-        $option['currency'] = 'UAH';
+        $option['currency'] = $currency;
         $option['amount'] = $amount;
-
-        if ($currency != 'UAH') {
-            $option['alternativeCurrency'] = $currency;
-            $option['alternativeAmount'] = $amount;
-            $option['amount'] = $amount;
-        }
-
 
         $option['productName'] = $productNames;
         $option['productPrice'] = $productPrices;
